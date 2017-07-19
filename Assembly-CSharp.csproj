@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{521ED79C-5EAB-32DB-87E0-6ABC2C1DF060}</ProjectGuid>
+    <ProjectGuid>{5EC07B2A-DB8A-61D3-F4C1-FBD4C9558811}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,9 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\Memory Cards\MemoryCard.cs" />
-     <Compile Include="Assets\Scenes\Memory Cards\SceneController.cs" />
-     <Compile Include="Assets\Scenes\Memory Cards\UIButton.cs" />
+     <Compile Include="Assets\Unity-in-Action-Book\Scenes\Memory Cards\MemoryCard.cs" />
+     <Compile Include="Assets\Unity-in-Action-Book\Scenes\Memory Cards\SceneController.cs" />
+     <Compile Include="Assets\Unity-in-Action-Book\Scenes\Memory Cards\UIButton.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
