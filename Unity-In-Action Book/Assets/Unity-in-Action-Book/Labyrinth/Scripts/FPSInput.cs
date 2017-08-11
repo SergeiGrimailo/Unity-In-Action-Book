@@ -9,7 +9,21 @@ public class FPSInput : MonoBehaviour {
 	public float speed = 6.0f;
 	public float gravity = -9.8f;
 
+	public const float baseSpeed = 6.0f;
+
 	private CharacterController _charController;
+
+	private void Awake() {
+		Messenger<float>.AddListener(GameEvent.SPEED_CHANGE, OnSpeedChange);
+	}
+
+	private void OnDestroy() {
+		Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGE, OnSpeedChange);
+	}
+
+	private void OnSpeedChange(float value) {
+		speed = baseSpeed * value;
+	}
 
 	// Use this for initialization
 	void Start () {

@@ -13,6 +13,19 @@ public class WanderingAI : MonoBehaviour {
 	private GameObject fireballPrefab;
 	private GameObject _fireball;
 
+	public const float baseSpeed = 3.0f;
+
+	void Awake() {
+		Messenger<float>.AddListener(GameEvent.SPEED_CHANGE, OnSpeedChange);
+	}
+
+	void OnDestroy() {
+		Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGE, OnSpeedChange);
+	}
+
+	public void OnSpeedChange(float value) {
+		speed = baseSpeed * value;
+	}
 
 	// Use this for initialization
 	void Start () {

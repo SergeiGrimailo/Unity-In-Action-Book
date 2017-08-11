@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RayShooter : MonoBehaviour {
 
@@ -8,10 +9,7 @@ public class RayShooter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_camera = GetComponent<Camera>();
-
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
+		_camera = GetComponent<Camera>();		
 	}
 
 	private void OnGUI() {
@@ -33,6 +31,7 @@ public class RayShooter : MonoBehaviour {
 				ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
 				if (target != null) {
 					target.ReactToHit();
+					Messenger.Broadcast(GameEvent.ENEMY_HIT);
 				} else {
 					StartCoroutine(SphereIndicator(hit.point));
 				}
